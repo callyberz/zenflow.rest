@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 interface BreathingCircleProps {
   magnifyingDuration: number;
+  pauseDuration: number;
 }
-
-const repeatDelay = 1;
 
 export const BreathingCircleMotion = ({
   magnifyingDuration,
+  pauseDuration,
 }: BreathingCircleProps) => {
   const [breathingText, setBreathingText] = useState("Inhale");
 
@@ -23,7 +23,7 @@ export const BreathingCircleMotion = ({
         // 1/4 duration of the magnifying circle, change the text
         // plus 1/2 of the repeatDelay
       },
-      (magnifyingDuration / 4 + repeatDelay / 2) * 1000,
+      (magnifyingDuration / 4 + pauseDuration / 2) * 1000,
     );
 
     return () => {
@@ -44,7 +44,7 @@ export const BreathingCircleMotion = ({
         ease: "easeInOut",
         times: [0, 0.2, 0.5, 0.8, 1],
         repeat: Infinity,
-        repeatDelay: repeatDelay,
+        repeatDelay: pauseDuration,
       }}
     >
       <motion.div
@@ -57,7 +57,7 @@ export const BreathingCircleMotion = ({
           ease: "easeInOut",
           times: [0, 0.2, 0.5, 0.8, 1],
           repeat: Infinity,
-          repeatDelay: repeatDelay,
+          repeatDelay: pauseDuration,
         }}
       >
         <motion.div
