@@ -8,7 +8,7 @@ import {
 import { BreathingCircleMotion } from "~/components/BreathingCircleMotion";
 import { Slider } from "~/components/ui/slider";
 
-export default function Meditation() {
+export default function BreathingExercise() {
   const [breathingSeconds, setBreathingSeconds] = useState(
     inahleExhaleIntervalInSecond,
   );

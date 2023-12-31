@@ -1,4 +1,8 @@
-export function HeroSection() {
+import { getServerAuthSession } from "~/server/auth";
+
+async function HeroSection() {
+  const auth = await getServerAuthSession();
+
   return (
     <section className="w-full  py-6 md:py-12 lg:py-16 xl:py-24 ">
       <div className="container px-4 md:px-6">
@@ -8,7 +12,9 @@ export function HeroSection() {
               zenflow.rest
             </h1>
             <p className="mx-auto max-w-[700px] text-black md:text-xl">
-              Anything we can help you with?
+              {`Hi ${
+                auth?.user.name ?? "there"
+              }! Welcome to zenflow.rest. Anything we can help you with?`}
             </p>
           </div>
         </div>
@@ -16,3 +22,5 @@ export function HeroSection() {
     </section>
   );
 }
+
+export default HeroSection;
