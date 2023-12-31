@@ -3,23 +3,14 @@
 import { useState } from "react";
 import { inahleExhaleIntervalInSecond } from "~/lib/constants";
 import { BreathingCircleMotion } from "~/components/BreathingCircleMotion";
-import { getServerAuthSession } from "~/server/auth";
-import { redirect } from "next/navigation";
 
-// eslint-disable-next-line @next/next/no-async-client-component
-export default async function Meditation() {
-  const auth = await getServerAuthSession();
-
-  if (!auth) {
-    redirect("/login");
-  }
-
+export default function Meditation() {
   const [breathingSeconds, setBreathingSeconds] = useState(
     inahleExhaleIntervalInSecond,
   );
 
   return (
-    <div className="px-6">
+    <div className="min-h-screen bg-amber-400 px-6">
       <div className="flex flex-col items-center justify-center">
         <div className="w-full flex-1">
           <h2 className="mt-6 text-2xl font-semibold">Customization Options</h2>

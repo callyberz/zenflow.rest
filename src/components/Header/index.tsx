@@ -1,33 +1,25 @@
-import { useEffect, useState } from "react";
-import { getServerAuthSession } from "~/server/auth";
-import { LoginButton } from "../auth/login";
-import { LogoutButton } from "../auth/logout";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "~/components/ui/navigation-menu";
+import Link from "next/link";
 
-export const Header = async () => {
-  const auth = await getServerAuthSession();
-  console.log(auth);
-
-  // const [currentDateTimeString, setCurrentDateTimeString] = useState<
-  //   string | null
-  // >(null);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentDateTimeString(new Date().toLocaleString());
-  //   }, 1000);
-
-  //   return () => clearInterval(interval);
-  // }, []);
-
+async function Header() {
   return (
-    <div className="bg-[#6f5de6] ">
-      <div className="px-6 pt-8">
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          Welcome {auth && auth.user ? auth.user.name : "Guest"}
-        </h1>
-
-        {auth && auth.user ? <LogoutButton /> : <LoginButton />}
-      </div>
-    </div>
+    <NavigationMenu className="h-16  overflow-hidden bg-amber-400 p-4 backdrop-blur-lg">
+      <NavigationMenuList className="flex w-screen items-center justify-between gap-4 px-4 md:px-8">
+        <NavigationMenuItem>
+          <Link href="/" legacyBehavior scroll>
+            <NavigationMenuLink className="font-heading cursor-pointer bg-gradient-to-br bg-clip-text font-bold text-white">
+              zenflow.rest
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
   );
-};
+}
+
+export default Header;
