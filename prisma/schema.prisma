@@ -14,18 +14,6 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    createdBy   User   @relation(fields: [createdById], references: [id])
-    createdById String
-
-    @@index([name])
-}
-
 // Necessary for Next auth
 model Account {
     id                String  @id @default(cuid())
@@ -45,6 +33,24 @@ model Account {
     @@unique([provider, providerAccountId])
 }
 
+model action {
+    id       Int        @id @default(autoincrement())
+    action   String
+    Activity Activity[]
+}
+
+model Activity {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    User   User?   @relation(fields: [userId], references: [id])
+    userId String?
+
+    Action   action @relation(fields: [actionId], references: [id])
+    actionId Int
+}
+
 model Session {
     id           String   @id @default(cuid())
     sessionToken String   @unique
@@ -54,14 +60,14 @@ model Session {
 }
 
 model User {
-    id            String    @id @default(cuid())
+    id            String     @id @default(cuid())
     name          String?
-    email         String?   @unique
+    email         String?    @unique
     emailVerified DateTime?
     image         String?
     accounts      Account[]
     sessions      Session[]
-    posts         Post[]
+    activity      Activity[]
 }
 
 model VerificationToken {
