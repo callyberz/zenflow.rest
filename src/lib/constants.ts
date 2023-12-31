@@ -1,1 +1,1 @@
-export const inahleExhaleIntervalInSecond = 10;
+export const inahleExhaleIntervalInSecond = 12;
