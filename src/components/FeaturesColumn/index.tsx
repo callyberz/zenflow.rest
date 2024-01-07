@@ -33,7 +33,7 @@ export default function FeaturesColumn() {
       title: "Daily Check-In",
       backgroundColor: "bg-amber-600",
       icon: <CheckCircle className="h-6 w-6 md:h-12 md:w-12" />,
-      href: "/",
+      href: "/account",
     },
     {
       title: "Cultivating Black Joy",

@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
 import Header from "~/components/Header";
+import { Toaster } from "~/components/ui/sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`bg-amber-400 font-sans ${inter.variable}`}>
         <Header />
+        <Toaster />
         {children}
       </body>
     </html>

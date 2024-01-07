@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { LogoutButton } from "~/components/auth/logout";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { getServerAuthSession } from "~/server/auth";
+import { CheckInButton } from "./CheckInButton";
 
 async function AccountInfo() {
   const auth = await getServerAuthSession();
@@ -21,9 +22,14 @@ async function AccountInfo() {
               <AvatarFallback></AvatarFallback>
             </Avatar>
             <p className="text-black-500">{auth.user.email}</p>
+
+            <p className="text-black-500">{`🔥🔥🔥 Checkin for ${auth.user.checkinCount} in a row!`}</p>
           </div>
         )}
-        <LogoutButton />
+        <div className="flex gap-2">
+          <CheckInButton />
+          <LogoutButton />
+        </div>
       </div>
     </div>
   );
