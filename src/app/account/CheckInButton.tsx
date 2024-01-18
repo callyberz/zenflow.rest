@@ -7,7 +7,6 @@ import { useEffect } from "react";
 
 export const CheckInButton = () => {
   const { pending } = useFormStatus();
-  console.log({ pending });
 
   useEffect(() => {
     if (pending) {
