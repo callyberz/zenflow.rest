@@ -31,7 +31,6 @@ export default function BreathingExercise() {
                 max={30}
                 step={1}
                 onValueChange={(value) => {
-                  console.log(value);
                   setBreathingSeconds(Number(value));
                 }}
               />

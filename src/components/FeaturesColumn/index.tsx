@@ -35,42 +35,42 @@ export default function FeaturesColumn() {
       icon: <CheckCircle className="h-6 w-6 md:h-12 md:w-12" />,
       href: "/account",
     },
-    {
-      title: "Cultivating Black Joy",
-      backgroundColor: "bg-pink-500",
-      icon: <Smile className="h-6 w-6 md:h-12 md:w-12" />,
-      href: "/",
-    },
-    {
-      title: "Guide to Sleep",
-      backgroundColor: "bg-lime-300",
-      icon: <BedDouble className="h-6 w-6 md:h-12 md:w-12" />,
-      href: "/",
-    },
-    {
-      title: "Beginning Meditation",
-      backgroundColor: "bg-purple-400",
-      icon: <Brain className="h-6 w-6 md:h-12 md:w-12" />,
-      href: "/",
-    },
-    {
-      title: "The Shine Collection",
-      backgroundColor: "bg-teal-300",
-      icon: <Heart className="h-6 w-6 md:h-12 md:w-12" />,
-      href: "/",
-    },
-    {
-      title: "Women's Collection",
-      backgroundColor: "bg-sky-400",
-      icon: <Ear className="h-6 w-6 md:h-12 md:w-12" />,
-      href: "/",
-    },
-    {
-      title: "Parents and Kids",
-      backgroundColor: "bg-violet-500",
-      icon: <Slice className="h-6 w-6 md:h-12 md:w-12" />,
-      href: "/",
-    },
+    // {
+    //   title: "Cultivating Black Joy",
+    //   backgroundColor: "bg-pink-500",
+    //   icon: <Smile className="h-6 w-6 md:h-12 md:w-12" />,
+    //   href: "/",
+    // },
+    // {
+    //   title: "Guide to Sleep",
+    //   backgroundColor: "bg-lime-300",
+    //   icon: <BedDouble className="h-6 w-6 md:h-12 md:w-12" />,
+    //   href: "/",
+    // },
+    // {
+    //   title: "Beginning Meditation",
+    //   backgroundColor: "bg-purple-400",
+    //   icon: <Brain className="h-6 w-6 md:h-12 md:w-12" />,
+    //   href: "/",
+    // },
+    // {
+    //   title: "The Shine Collection",
+    //   backgroundColor: "bg-teal-300",
+    //   icon: <Heart className="h-6 w-6 md:h-12 md:w-12" />,
+    //   href: "/",
+    // },
+    // {
+    //   title: "Women's Collection",
+    //   backgroundColor: "bg-sky-400",
+    //   icon: <Ear className="h-6 w-6 md:h-12 md:w-12" />,
+    //   href: "/",
+    // },
+    // {
+    //   title: "Parents and Kids",
+    //   backgroundColor: "bg-violet-500",
+    //   icon: <Slice className="h-6 w-6 md:h-12 md:w-12" />,
+    //   href: "/",
+    // },
   ];
 
   return (
