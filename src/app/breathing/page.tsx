@@ -12,7 +12,6 @@ export default function BreathingExercise() {
   const [breathingSeconds, setBreathingSeconds] = useState(
     inahleExhaleIntervalInSecond,
   );
-  const [pauseSeconds, setPauseSeconds] = useState(pauseIntervalInSecond);
 
   return (
     <div
@@ -24,7 +23,7 @@ export default function BreathingExercise() {
           <BreathingOptions
             breathingSeconds={breathingSeconds}
             setBreathingSeconds={setBreathingSeconds}
-            pauseIntervalInSecond={pauseSeconds}
+            pauseIntervalInSecond={pauseIntervalInSecond}
           />
         </div>
         <div className="flex w-full max-w-md justify-center pt-10">
